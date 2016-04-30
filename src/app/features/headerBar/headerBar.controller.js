@@ -1,6 +1,6 @@
 class HeaderBarController {
 	constructor() {
-		this.name = 'headerBar';
+		this.headerTitle = 'Github List Repos';
 	}
 }
 

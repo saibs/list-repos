@@ -1,10 +1,7 @@
 import angular from 'angular';
-import 'angular-ui-router';
 import headerBarComponent from './headerBar.component';
 
-const headerBarModule = angular.module('headerBar', [
-	'ui.router'
-])
+const headerBarModule = angular.module('headerBar', [])
 .component('headerBar', headerBarComponent);
 
 export default headerBarModule;

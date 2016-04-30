@@ -4,7 +4,7 @@ import HeaderBarComponent from './headerBar.component';
 import HeaderBarTemplate from './headerBar.html';
 
 describe('HeaderBar', () => {
-	let $rootScope, makeController;
+	let makeController;
 
 	beforeEach(window.module(HeaderBarModule.name));
 	beforeEach(inject(() => {
@@ -26,13 +26,6 @@ describe('HeaderBar', () => {
 		});
 	});
 
-	describe('Template', () => {
-		// template specs
-		// tip: use regex to ensure correct bindings are used e.g., {{  }}
-		it('has name in template [REMOVE]', () => {
-			expect(HeaderBarTemplate).toMatch(/{{\s?vm\.name\s?}}/g);
-		});
-	});
 
 	describe('Component', () => {
 		// component/directive specs
