@@ -1,0 +1,34 @@
+// Fonts
+$font--primary : 'Roboto', sans-serif;
+
+// Breakpoints
+// xs
+$breakpoint--xs    : max-width 599px;
+$breakpoint--gt-xs : 600px;
+// sm
+$breakpoint--sm    : 600px 959px;
+$breakpoint--lt-sm : max-width 959px;
+$breakpoint--gt-sm : 960px;
+// md
+$breakpoint--md    : 960px 1279px;
+$breakpoint--lt-md : max-width 1279px;
+$breakpoint--gt-md : 1280px;
+// lg
+$breakpoint--lg    : 1280px 1919px;
+$breakpoint--lt-lg : max-width 1919px;
+$breakpoint--gt-lg : 1920px;
+// xl
+$breakpoint--xl    : $breakpoint--gt-lg;
+
+// Spacing
+$spacing--xsmall  : 4px;
+$spacing--small   : 8px;
+$spacing--medium  : 16px;
+$spacing--large   : 24px;
+$spacing--xlarge  : 32px;
+$spacing--xxlarge : 40px;
+
+
+// Paths
+$path--images : '../assets/images/';
+$path--fonts  : '../assets/fonts/';

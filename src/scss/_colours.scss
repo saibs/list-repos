@@ -1,0 +1,74 @@
+//
+// Colours
+//
+
+// Primary
+$colour--primary        : $md-light-blue-500;
+$colour--primary--light : $md-light-blue-300;
+$colour--primary--dark  : $md-light-blue-700;
+$colour--primary--50    : $md-light-blue-50;
+$colour--primary--100   : $md-light-blue-100;
+$colour--primary--200   : $md-light-blue-200;
+$colour--primary--300   : $md-light-blue-300;
+$colour--primary--400   : $md-light-blue-400;
+$colour--primary--500   : $md-light-blue-500;
+$colour--primary--600   : $md-light-blue-600;
+$colour--primary--700   : $md-light-blue-700;
+$colour--primary--800   : $md-light-blue-800;
+$colour--primary--900   : $md-light-blue-900;
+$colour--primary--a100  : $md-light-blue-a100;
+$colour--primary--a200  : $md-light-blue-a200;
+$colour--primary--a400  : $md-light-blue-a400;
+$colour--primary--a700  : $md-light-blue-a700;
+
+// Accent
+$colour--accent        : $md-orange-500;
+$colour--accent--light : $md-orange-300;
+$colour--accent--dark  : $md-orange-700;
+$colour--accent--50    : $md-orange-50;
+$colour--accent--100   : $md-orange-100;
+$colour--accent--200   : $md-orange-200;
+$colour--accent--300   : $md-orange-300;
+$colour--accent--400   : $md-orange-400;
+$colour--accent--500   : $md-orange-500;
+$colour--accent--600   : $md-orange-600;
+$colour--accent--700   : $md-orange-700;
+$colour--accent--800   : $md-orange-800;
+$colour--accent--900   : $md-orange-900;
+$colour--accent--a100  : $md-orange-a100;
+$colour--accent--a200  : $md-orange-a200;
+$colour--accent--a400  : $md-orange-a400;
+$colour--accent--a700  : $md-orange-a700;
+
+// Black, White & Grays
+$colour--black       : $md-black;
+$colour--white       : $md-white;
+$colour--gray        : $md-grey-500;
+$colour--gray--light : $md-grey-300;
+$colour--gray--dark  : $md-grey-700;
+$colour--gray--50    : $md-grey-50;
+$colour--gray--100   : $md-grey-100;
+$colour--gray--200   : $md-grey-200;
+$colour--gray--300   : $md-grey-300;
+$colour--gray--400   : $md-grey-400;
+$colour--gray--500   : $md-grey-500;
+$colour--gray--600   : $md-grey-600;
+$colour--gray--700   : $md-grey-700;
+$colour--gray--800   : $md-grey-800;
+$colour--gray--900   : $md-grey-900;
+
+// Success
+$colour--success        : $md-light-green-500;
+$colour--success--light : $md-light-green-300;
+$colour--success--dark  : $md-light-green-700;
+
+// Error
+$colour--error        : $md-red-500;
+$colour--error--light : $md-red-300;
+$colour--error--dark  : $md-red-700;
+
+// Background
+$colour--bg : $colour--gray--100;
+
+// Text
+$colour--text : $colour--black;

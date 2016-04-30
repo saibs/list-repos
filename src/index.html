@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width" />
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<title ng-bind="title">List Github Repos</title>
+	</head>
+	<body>
+		<app></app>
+		<script src="vendor.bundle.js"></script>
+		<script src="app.bundle.js"></script>
+		<!-- build:remove -->
+		<script src="mock.bundle.js"></script>
+		<!-- endbuild -->
+		<script>
+			angular
+				.element(document)
+				.ready(window.App.start);
+		</script>
+	</body>
+</html>
