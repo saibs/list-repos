@@ -8,13 +8,17 @@
   "repository": {
     "type": "git"
   },
+  "engines": {
+    "node": "5.9.1"
+  },
   "private": true,
   "scripts": {
     "serve": "gulp",
     "serve-notests": "gulp --notests",
     "test": "gulp test:unit",
     "test-report-html": "gulp test:unit:reporthtml",
-    "build": "gulp build"
+    "build": "gulp build",
+    "heroku-postbuild": "gulp build"
   },
   "devDependencies": {
     "angular-mocks": "1.5.0",
@@ -27,7 +31,6 @@
     "del": "2.2.0",
     "eslint": "1.10.3",
     "eslint-loader": "1.2.1",
-    "express": "^4.13.4",
     "file-loader": "0.8.5",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "3.1.0",
@@ -76,6 +79,7 @@
     "angular-ui-router": "~0.2.15",
     "babel-polyfill": "6.7.2",
     "breakpoint-sass": "~2.6.1",
+    "express": "^4.13.4",
     "lodash": "4.5.1"
   }
 }
