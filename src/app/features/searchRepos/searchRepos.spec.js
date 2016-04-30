@@ -45,9 +45,7 @@ describe('SearchRepos', () => {
 			expect(controller).toBeDefined();
 		});
 		it('should call SearchService search method', () => {
-			/*eslint-disable */
 			spyOn(SearchReposService, ['search']).and.callThrough();
-			/*eslint-enable */
 			controller.search('Kibo007');
 			expect(SearchReposService.search).toHaveBeenCalled();
 			expect(controller.isLoading).toBe(true);

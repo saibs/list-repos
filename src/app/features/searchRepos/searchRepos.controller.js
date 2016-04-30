@@ -21,10 +21,10 @@ class SearchReposController {
 			}, (error)=> {
 				switch (error.status) {
 					case 404:
-						this.showError(error.statusText);
+						this.showError('User not found');
 						break;
 					default:
-						this.showError('Something Went Wrong');
+						this.showError('Something went wrong');
 						break;
 				}
 			})

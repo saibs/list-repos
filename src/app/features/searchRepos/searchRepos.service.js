@@ -1,7 +1,8 @@
 import angular from 'angular';
 
 class SearchReposService {
-	constructor(BackendService) {
+	constructor($q, BackendService) {
+		this.$q = $q;
 		this.BackendService = BackendService;
 		this.repos = [];
 	}
@@ -13,7 +14,7 @@ class SearchReposService {
 				return this.repos;
 			}, (error) => {
 				this.repos = [];
-				return error;
+				return this.$q.reject(error);
 			});
 	}
 }
