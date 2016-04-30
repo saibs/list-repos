@@ -1,0 +1,14 @@
+<md-list class="search-repos__list">
+	<md-subheader class="md-no-sticky">Repositories</md-subheader>
+	<md-list-item
+			class="md-2-line"
+			ng-repeat="repo in vm.list"
+			ng-click="vm.openRepoLink(repo)"
+	>
+		<img ng-src="{{repo.owner.avatar_url}}" class="md-avatar" alt="{{repo.owner.login}}" />
+		<div class="md-list-item-text" layout="column">
+			<h3>{{repo.name}}</h3>
+			<p>{{repo.description}}</p>
+		</div>
+	</md-list-item>
+</md-list>

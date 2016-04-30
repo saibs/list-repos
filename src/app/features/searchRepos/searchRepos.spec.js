@@ -2,14 +2,30 @@ import SearchReposModule from './searchRepos.module';
 import SearchReposController from './searchRepos.controller';
 import SearchReposComponent from './searchRepos.component';
 import SearchReposTemplate from './searchRepos.html';
+import Core from '../../core/core.module';
 
 describe('SearchRepos', () => {
-	let makeController;
+	let $location,
+		$mdToast,
+		makeController,
+		$q,
+		SearchReposService;
 
-	beforeEach(window.module(SearchReposModule.name));
-	beforeEach(inject(() => {
+	beforeEach(() => {
+		window.module(Core.name);
+		window.module(SearchReposModule.name);
+	});
+	beforeEach(inject((_$location_, _$mdToast_, _$q_) => {
+		$location = _$location_;
+		$mdToast = _$mdToast_;
+		$q = _$q_;
+		SearchReposService = {
+			search: () => {
+				return $q.resolve([{}]);
+			}
+		};
 		makeController = () => {
-			return new SearchReposController();
+			return new SearchReposController($location, $mdToast, SearchReposService);
 		};
 	}));
 
@@ -19,18 +35,22 @@ describe('SearchRepos', () => {
 
 	describe('Controller', () => {
 		// controller specs
-		it('to be defined', () => {
-			const controller = makeController();
+		let controller;
 
+		beforeEach(() => {
+			controller = makeController();
+		});
+
+		it('to be defined', () => {
 			expect(controller).toBeDefined();
 		});
-	});
-
-	describe('Template', () => {
-		// template specs
-		// tip: use regex to ensure correct bindings are used e.g., {{  }}
-		it('has name in template [REMOVE]', () => {
-			expect(SearchReposTemplate).toMatch(/{{\s?vm\.name\s?}}/g);
+		it('should call SearchService search method', () => {
+			/*eslint-disable */
+			spyOn(SearchReposService, ['search']).and.callThrough();
+			/*eslint-enable */
+			controller.search('Kibo007');
+			expect(SearchReposService.search).toHaveBeenCalled();
+			expect(controller.isLoading).toBe(true);
 		});
 	});
 

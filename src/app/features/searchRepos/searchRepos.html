@@ -1,3 +1,21 @@
-<div>
-	<h1>{{ vm.name }}</h1>
-</div>
+<section layout="row" flex class="search-repos">
+	<md-content flex layout-padding>
+		<form ng-submit="vm.submit()">
+			<div layout="row">
+				<md-input-container class="search-repos__input" flex>
+					<label>Github user name</label>
+					<input ng-model="vm.userName">
+				</md-input-container>
+				<div>
+					<md-button aria-label="Search" class="search-repos__btn" ng-click="vm.search(vm.userName)">
+						<md-icon>search</md-icon>
+					</md-button>
+				</div>
+			</div>
+			<div layout="row" class="search-repos__loading" layout-align="center center" ng-show="vm.isLoading">
+				<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+			</div>
+		</form>
+		<repos-list list="vm.SearchReposService.repos"></repos-list>
+	</md-content>
+</section>
