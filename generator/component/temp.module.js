@@ -1,10 +1,10 @@
 import angular from 'angular';
-import 'angular-ui-router';
-import <%= name %>Component from './<%= name %>.component';
+import service from './<%= name %>.service';
+import component from './<%= name %>.component';
 
 const <%= name %>Module = angular.module('<%= name %>', [
-	'ui.router'
 ])
-.component('<%= name %>', <%= name %>Component);
+	.service('<%= upCaseName %>Service', service)
+	.component('<%= name %>', component);
 
 export default <%= name %>Module;

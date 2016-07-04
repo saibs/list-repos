@@ -14,7 +14,7 @@ module.exports = function(config) {
 	// ESLint should always lint the code.
 	preloaders.push({
 		test: /\.js$/,
-		exclude: /node_modules/,
+		include: /\.spec\.js/,
 		loaders: ['eslint-loader']
 	});
 

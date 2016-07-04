@@ -50,7 +50,7 @@ module.exports = {
 		},
 		modulesDirectories: [
 			'node_modules',
-			'src/mock/data' //Load mock data from this directory
+			'mock/data' //Load mock data from this directory
 		]
 	}
 };

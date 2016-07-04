@@ -1,6 +1,6 @@
 import angular from 'angular';
 import 'angular-mocks';
-import app from '../app/app.module';
+import app from '../src/app/app.module';
 
 import httpMocks from './httpMocks';
 

@@ -49,7 +49,7 @@ const paths = {
 	mainSCSS: path.join(root, 'scss/main.scss'),
 	blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
 	dist: path.join(__dirname, 'www'),
-	karmaConfig: path.join(__dirname, 'karma.conf.js'),
+	karmaConfig: path.join(__dirname, 'test/karma.conf.js'),
 	docs: path.join(__dirname, 'docs/')
 };
 
@@ -104,7 +104,9 @@ gulp.task('test:unit', (done) => {
 			type: 'text'
 		},
 		enableIsparta: true
-	}, done);
+	}, function(exitCode) {
+		done();
+	});
 
 	karmaServer.start();
 });
@@ -176,7 +178,10 @@ gulp.task('tdd', (done) => {
 		configFile: paths.karmaConfig,
 		singleRun: false,
 		autoWatch: true,
-		reporters: ['nyan']
+		reporters: ['nyan'],
+		preprocessors: {
+			'spec.bundle.js': ['webpack', 'sourcemap']
+		}
 	}, function(exitCode) {
 		done();
 		// Exit karma process manually on ctrl + c
@@ -193,6 +198,9 @@ gulp.task('component', () => {
 	const cap = (val) => {
 		return val.charAt(0).toUpperCase() + val.slice(1);
 	};
+	const dash = (val) => {
+		return val.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+	};
 	const name = yargs.argv.name;
 	const parentPath = yargs.argv.parent || '';
 	const destPath = path.join(resolveToComponents(), parentPath, name);
@@ -200,10 +208,11 @@ gulp.task('component', () => {
 	return gulp.src(paths.blankTemplates)
 		.pipe(template({
 			name: name,
-			upCaseName: cap(name)
+			upCaseName: cap(name),
+			dashName: dash(name)
 		}))
-		.pipe(rename((path) => {
-			path.basename = path.basename.replace('temp', name);
+		.pipe(rename((filePath) => {
+			filePath.basename = filePath.basename.replace('temp', name);
 		}))
 		.pipe(gulp.dest(destPath));
 });
