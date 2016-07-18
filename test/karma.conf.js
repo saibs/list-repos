@@ -6,7 +6,7 @@ module.exports = function(config) {
 	if (config.enableIsparta) {
 		preloaders.push({
 			test: [/\.js$/],
-			exclude: [/node_modules/, /\spec.js$/],
+			exclude: [/node_modules/, /\.spec.js$/],
 			loaders: ['isparta']
 		});
 	}

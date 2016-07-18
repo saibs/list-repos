@@ -6,7 +6,7 @@ import httpMocks from './httpMocks';
 
 (function() {
 
-	if (!document.URL.match(/\?mockbackend/)) {
+	if (localStorage.getItem('mock') === '0') {
 		return; // do nothing special - this app is not gonna use stubbed backend
 	}
 
