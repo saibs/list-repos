@@ -81,6 +81,6 @@
     "angular-sanitize": "1.5.5",
     "angular-ui-router": "0.3.0",
     "breakpoint-sass": "2.6.1",
-    "lodash": "4.12.0"
+    "lodash": "4.17.19"
   }
 }
