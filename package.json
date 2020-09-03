@@ -60,7 +60,7 @@
     "karma-webpack-with-fast-source-maps": "1.9.2",
     "ng-annotate-loader": "0.1.0",
     "node-libs-browser": "0.5.0",
-    "node-sass": "3.7.0",
+    "node-sass": "4.14.1",
     "phantomjs": "~2.1.1",
     "raw-loader": "0.5.1",
     "run-sequence": "1.2.1",
